@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* import { createContext, useEffect, useReducer } from "react";
+import { toast } from 'react-hot-toast'
+import api from "../Components/ApiConfig";
+
+export const AuthContext = createContext();
+
+const initialState = { user: null };
+
+const reducer = (state, action) => {
+    switch (action.type) {
+        case 'LOGIN':
+            return { ...state, user: action.payload }
+        case 'LOGOUT':
+            localStorage.removeItem("token")
+            toast.success("Logout success.")
+            return { ...state, user: null }
+        default:
+            return state
+    }
+}
+
+// Its a higher order function hof 
+const HandleAuthContext = ({ children }) => {
+    const [state, dispatch] = useReducer(reducer, initialState)
+
+    useEffect(() => {
+        async function getCurrentUserData() {
+            var token = JSON.parse(localStorage.getItem("token"));
+
+            if (token) {
+                try {
+                    const response = await api.post("/get-current-user", { token });
+                console.log(response.data,"-resspomnse data")
+                if (response.data.success) {
+                    dispatch({
+                        type: "LOGIN",
+                        payload: response.data.user
+                    })
+                } else {
+                    dispatch({
+                        type: "LOGOUT"
+                    });
+                }
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+
+        }
+        getCurrentUserData();
+    }, [])
+
+    return (
+        <AuthContext.Provider value={{ state, dispatch }}>
+            {children}
+        </AuthContext.Provider>
+    )
+
+}
+
+export default HandleAuthContext; */
+
+/* 
+
+const app = express();
+app.use(express.json());
+dotenv.config();
+app.use(cors());
+app.use(morgan("dev"))
+
+app.get("/", (req, res) => {
+  res.send("Working!");
+});
+
+mongoose.connect(process.env.MONGO_URL).then(() => {
+  console.log("Connected to DB!");
+});
+
+app.listen(8000, () => {
+  console.log("Server running on port 8000!");
+}); */
